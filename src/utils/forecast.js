@@ -33,7 +33,9 @@ const forecast = (a, b, callback) => {
                 current_temperature: body.current.temperature,
 
 
-                feels_like: body.current.feelslike
+                feels_like: body.current.feelslike,
+
+                humidity: body.current.humidity
 
 
             })

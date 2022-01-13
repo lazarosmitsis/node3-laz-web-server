@@ -42,7 +42,7 @@ weatherForm.addEventListener('submit', (e)=>{
                 console.log('location: '+data.location)
                 console.log('forecast: '+data.forecast.weather_description)
                 messageOne.textContent = data.location
-                messageTwo.textContent = data.forecast.weather_description
+                messageTwo.textContent = data.forecast.weather_description + ", humidity: " + data.forecast.humidity + "%"
             }
         })
     })
