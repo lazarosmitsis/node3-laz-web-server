@@ -24,7 +24,7 @@ const messageTwo = document.querySelector('#message-2')
 
 //messageOne.textContent = 'from javascript'
 
-weatherForm.addEventListener('submit', (e)=>{
+weatherForm.addEventListener('submit', (e) => {
     e.preventDefault()
 
     const location = search.value;
@@ -33,14 +33,14 @@ weatherForm.addEventListener('submit', (e)=>{
     messageOne.textContent = 'Loading...'
     messageTwo.textContent = ''
 
-    fetch('/weather?address='+location).then((response)=>{
-        response.json().then((data)=>{
+    fetch('/weather?address=' + location).then((response) => {
+        response.json().then((data) => {
             if (data.error) {
                 console.log(data.error)
                 messageOne.textContent = data.error
             } else {
-                console.log('location: '+data.location)
-                console.log('forecast: '+data.forecast.weather_description)
+                console.log('location: ' + data.location)
+                console.log('forecast: ' + data.forecast.weather_description)
                 messageOne.textContent = data.location
                 messageTwo.textContent = data.forecast.weather_description + ", humidity: " + data.forecast.humidity + "%"
             }
