@@ -20,7 +20,7 @@ hbs.registerPartials(partialsPath)
 
 // Setup static directory to serve
 app.use(express.static(publicDirectoryPath))
-
+console.log('laz')
 app.get('', (req, res) => {
     res.render('index', {
         title: 'Weather',
